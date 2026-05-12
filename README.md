@@ -1,1 +1,395 @@
-Iglesia 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>ICDNJ | Marcha y Concentración 2026</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ... TU CSS EXISTENTE (no es necesario cambiarlo, todo sigue igual) ... */
+body { font-family: 'Poppins', sans-serif; }
+h1, h2, h3, .serif { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+/* Fondo animado */
+.animate-bg { 
+    background: radial-gradient(circle at 20% 80%, rgba(99,102,241,0.4), transparent 60%), 
+                radial-gradient(circle at 80% 20%, rgba(236,72,153,0.4), transparent 60%), 
+                radial-gradient(circle at 50% 50%, rgba(255,215,0,0.35), transparent 65%); 
+    animation: bgMove 15s ease-in-out infinite alternate; 
+    filter: blur(60px); 
+}
+@keyframes bgMove { 
+    from { transform: translateY(0) scale(1); } 
+    to { transform: translateY(-120px) scale(1.05); } 
+}
+
+.glass { 
+    backdrop-filter: blur(20px); 
+    background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); 
+    border: 1px solid rgba(255,215,0,0.4); 
+}
+.glass-card {
+    backdrop-filter: blur(20px);
+    background: rgba(10, 43, 78, 0.6);
+    border: 1px solid rgba(245, 176, 66, 0.4);
+    transition: all 0.4s ease;
+}
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245, 176, 66, 0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(245,176,66,0.2);
+}
+
+.card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.card-hover:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 30px 50px rgba(255,215,0,0.2); }
+
+.icon-glow { filter: drop-shadow(0 0 16px rgba(255,215,0,0.8)); animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.title-glow { text-shadow: 0 0 25px rgba(255,215,0,0.7); letter-spacing: 2px; }
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 2.5rem; position: relative; }
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #f5b042, #ffd966);
+    margin: 0.8rem auto 0;
+    border-radius: 3px;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #f5b042, #c97e10);
+    color: #0a2b4e;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 40px;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+.btn-gold:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(245,176,66,0.5);
+}
+
+.btn-outline {
+    border: 2px solid #f5b042;
+    background: transparent;
+    color: #f5b042;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-outline:hover { background: #f5b042; color: #0a2b4e; transform: scale(1.02); }
+
+.form-input {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(245,176,66,0.3);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    width: 100%;
+    transition: all 0.3s;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #f5b042;
+    box-shadow: 0 0 15px rgba(245,176,66,0.3);
+}
+
+.stat-number { font-size: 2.5rem; font-weight: 800; color: #f5b042; }
+
+@media (max-width: 768px) {
+    .section-title { font-size: 1.8rem; }
+    .stat-number { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body class="relative text-white overflow-x-hidden bg-gradient-to-br from-blue-950 via-purple-900 to-black">
+
+<div class="fixed inset-0 -z-10 animate-bg"></div>
+
+<!-- BOTONES FLOTANTES -->
+<button id="backToTop" class="fixed bottom-24 right-6 z-50 bg-yellow-400 text-black p-3 rounded-full shadow-xl hover:scale-110 transition-all duration-300 hidden group">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+<a href="https://wa.me/18095550123" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 p-4 rounded-full shadow-xl hover:scale-110 transition-all duration-300 group">
+    <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+</a>
+
+<!-- MENÚ LATERAL -->
+<button id="menuBtn" class="fixed top-4 left-4 z-50 bg-black/60 backdrop-blur-md p-3 rounded-xl shadow-lg hover:scale-110 transition">
+    <i data-lucide="menu" class="w-6 h-6 text-yellow-400"></i>
+</button>
+<aside id="sidebar" class="fixed top-0 left-0 h-full w-72 glass p-6 z-40 transform -translate-x-full transition-transform duration-300 overflow-y-auto">
+    <div class="text-center mb-6">
+        <div class="w-20 h-20 rounded-full mx-auto mb-3 overflow-hidden border-2 border-yellow-400 bg-yellow-400/20 flex items-center justify-center">
+            <i class="fas fa-cross text-4xl text-yellow-400"></i>
+        </div>
+        <h2 class="text-2xl font-bold title-glow">ICDNJ</h2>
+        <p class="text-xs text-gray-300">Deshaciendo Las Obras Del diablo</p>
+    </div>
+    <nav class="flex flex-col gap-2 mb-6">
+        <a href="#inicio" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="home" class="w-5 h-5"></i> Inicio</a>
+        <a href="#marcha" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="flag" class="w-5 h-5"></i> Marcha 2026</a>
+        <a href="#cultos" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="calendar" class="w-5 h-5"></i> Días de Culto</a>
+        <a href="#pastores" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="users" class="w-5 h-5"></i> Pastores</a>
+        <a href="#ministerios" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="heart" class="w-5 h-5"></i> Ministerios</a>
+        <a href="#eventos" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="calendar-days" class="w-5 h-5"></i> Eventos</a>
+        <a href="#oracion" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="hands-praying" class="w-5 h-5"></i> Petición</a>
+        <a href="#ubicacion" class="hover:text-yellow-400 flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-white/10 transition"><i data-lucide="map-pin" class="w-5 h-5"></i> Ubicación</a>
+    </nav>
+    <div class="glass p-4 rounded-xl mb-4 text-center">
+        <h3 class="font-bold mb-2 text-yellow-400">Oraciones Contestadas</h3>
+        <div class="text-3xl font-bold text-yellow-400" id="sidebarPrayerCount">1,247</div>
+        <p class="text-xs text-gray-400 mt-1">Milagros de Dios</p>
+    </div>
+    <div class="glass p-4 rounded-xl text-center">
+        <h3 class="font-bold mb-2 text-yellow-400">Versículo del Día</h3>
+        <p class="text-sm italic mb-2" id="dailyVerse">"Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos."</p>
+        <p class="text-xs text-gray-400">Mateo 18:20</p>
+    </div>
+</aside>
+
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center text-center px-6">
+    <div class="relative z-10 max-w-5xl mx-auto" data-aos="zoom-in-up">
+        <div class="glass-card p-8 md:p-12 rounded-3xl">
+            <i class="fas fa-crown text-5xl text-yellow-400 mb-4 icon-glow"></i>
+            <h1 class="text-5xl md:text-7xl font-bold title-glow mb-3">ICDNJ</h1>
+            <p class="text-xl md:text-2xl mb-6">Deshaciendo Las Obras Del diablo <br> En El Nombre De Jesús</p>
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="https://www.instagram.com/pastor_manuelpaulino/" target="_blank" class="bg-pink-600 w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://www.youtube.com/@pastormanuelpaulino7" target="_blank" class="bg-red-600 w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition"><i class="fab fa-youtube text-xl"></i></a>
+                <a href="#" class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="bg-black w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition"><i class="fab fa-tiktok text-xl"></i></a>
+            </div>
+            <div class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full text-xl font-bold mb-4">30 MAYO 2026</div>
+            <p class="text-2xl font-bold text-yellow-400 mb-4">¡12vo ANIVERSARIO & MARCHA!</p>
+            <div class="bg-blue-900/50 p-4 rounded-2xl mb-6 text-left max-w-md mx-auto">
+                <p><i class="fas fa-clock text-yellow-400 mr-2"></i> <strong>Salida Marcha:</strong> 4:30 PM</p>
+                <p><i class="fas fa-church text-yellow-400 mr-2"></i> <strong>Culto:</strong> 7:30 PM</p>
+                <p><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> <strong>Play de Peravia Escondido</strong></p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#marcha" class="btn-gold"><i class="fas fa-flag-checkered mr-2"></i> Ver Marcha</a>
+                <a href="#oracion" class="btn-outline"><i class="fas fa-praying-hands mr-2"></i> Enviar Petición</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECCIÓN MARCHA Y CONCENTRACIÓN 2026 (CORREGIDA) ==================== -->
+<section id="marcha" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="section-title title-glow" data-aos="fade-up">🚩 Marcha y Concentración 2026</h2>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="glass-card p-4 rounded-2xl" data-aos="fade-right">
+            <img src="https://i.ibb.co/VWZRGJFP/Whats-App-Image-2026-05-02-at-3-46-31-PM.jpg" alt="Marcha ICDNJ 2026 - 12vo Aniversario" class="w-full h-auto rounded-xl shadow-2xl border-2 border-yellow-400">
+            <p class="text-center text-gray-300 text-sm mt-3">📸 Cartel oficial de la Gran Concentración - 30 Mayo 2026</p>
+        </div>
+        <div class="glass-card p-8 rounded-2xl" data-aos="fade-left">
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-flag-checkered text-4xl text-yellow-400 icon-glow"></i>
+                <h3 class="text-3xl font-bold">¡No Falten!</h3>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center gap-3"><i class="fas fa-calendar-alt text-yellow-400 text-xl"></i><span><strong>Fecha:</strong> Sábado 30 de Mayo 2026</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-clock text-yellow-400 text-xl"></i><span><strong>Concentración:</strong> 4:00 PM</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-shoe-prints text-yellow-400 text-xl"></i><span><strong>Salida Marcha:</strong> 4:30 PM</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-church text-yellow-400 text-xl"></i><span><strong>Culto de Aniversario:</strong> 7:30 PM</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-yellow-400 text-xl"></i><span><strong>Punto de Salida:</strong> Play de Peravia Escondido (C/27 Febrero frente UFHC)</span></div>
+            </div> <!-- Este es el cierre del div .space-y-4 que faltaba -->
+            <div class="mt-6 p-4 bg-yellow-400/20 rounded-xl text-center">
+                <p class="font-bold text-yellow-400">🔥 ¡Únete a la Gran Marcha De La Victoria! 🔥</p>
+                <p class="text-sm mt-2">Adoración, Danza, Exhortación De La Palabra y Pulseras Enciende Tu Fe</p>
+            </div>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="#ubicacion" class="btn-gold"><i class="fas fa-directions mr-2"></i> ¿Cómo llegar?</a>
+                <a href="#oracion" class="btn-outline"><i class="fas fa-praying-hands mr-2"></i> Enviar mi petición</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DÍAS DE CULTO -->
+<section id="cultos" class="py-20 px-6 max-w-6xl mx-auto bg-black/20 rounded-3xl">
+    <h2 class="section-title title-glow" data-aos="fade-up">⛪ Días de Culto</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-bible text-4xl text-yellow-400 mb-3"></i><h3 class="text-xl font-bold">Martes</h3><p>Estudio Biblico</p><p class="text-yellow-400 font-bold mt-2">7:30 PM</p></div>
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-users text-4xl text-yellow-400 mb-3"></i><h3 class="text-xl font-bold">Jueves</h3><p>Discipulado Amigos</p><p class="text-yellow-400 font-bold mt-2">7:00 PM</p></div>
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-fire text-4xl text-yellow-400 mb-3"></i><h3 class="text-xl font-bold">Viernes</h3><p>Oportunidades De Nuevos Creyentes</p><p class="text-yellow-400 font-bold mt-2">7:30 PM</p></div>
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-music text-4xl text-yellow-400 mb-3"></i><h3 class="text-xl font-bold">Sábado</h3><p>Culto De Ministerios</p><p class="text-yellow-400 font-bold mt-2">7:30 PM</p></div>
+        <div class="glass-card p-6 text-center card-hover md:col-span-2 lg:col-span-3"><i class="fas fa-crown text-4xl text-yellow-400 mb-3"></i><h3 class="text-xl font-bold">Domingo - Culto General</h3><p>Adoración, Danza , Milagros , Sanidad Y Liberación</p><p class="text-yellow-400 font-bold text-2xl mt-2">5:00 PM</p></div>
+    </div>
+</section>
+
+<!-- PASTORES CON LAS NUEVAS IMÁGENES DE IMGUR -->
+<section id="pastores" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="section-title title-glow" data-aos="fade-up"> PASTORES</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- PASTOR MANUEL PAULINO -->
+        <div class="glass-card p-8 text-center card-hover">
+            <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-yellow-400 bg-yellow-400/20 flex items-center justify-center">
+                <img src="https://i.imgur.com/Tx0AMBr.jpeg" 
+                     alt="Pastor Manuel Paulino" 
+                     class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-2xl font-bold uppercase">PASTOR MANUEL PAULINO</h3>
+            <p class="text-yellow-400 uppercase">PASTOR PRINCIPAL</p>
+            <div class="flex justify-center gap-3 mt-3">
+                <a href="https://www.instagram.com/pastor_manuelpaulino/" target="_blank" class="text-pink-500 text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@pastormanuelpaulino7" target="_blank" class="text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <!-- PASTORA MARIDEINY DE PAULINO -->
+        <div class="glass-card p-8 text-center card-hover">
+            <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-2 border-yellow-400 bg-yellow-400/20 flex items-center justify-center">
+                <img src="https://i.imgur.com/NvIVpDG.jpeg" 
+                     alt="Pastora Marideiny De Paulino" 
+                     class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-2xl font-bold uppercase">PASTORA MARIDEINY DE PAULINO</h3>
+            <p class="text-yellow-400 uppercase">PASTORA</p>
+        </div>
+    </div>
+</section>
+<!-- NOTA: Aquí se ha eliminado la etiqueta </section> duplicada -->
+
+<!-- MINISTERIOS (CORREGIDO) -->
+<section id="ministerios" class="py-20 px-6 max-w-6xl mx-auto bg-black/20 rounded-3xl">
+    <h2 class="section-title title-glow" data-aos="fade-up">🙌 Ministerios</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="music" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Alabanza</h3></div>
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="users" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Jóvenes</h3></div>
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="heart" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Intercesión</h3></div>
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="baby" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Niños</h3></div>
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="hand-heart" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Ayuda Social</h3></div>
+        <!-- ERROR DE ÍCONO CORREGIDO: Se cambió 'drama' por 'theater' -->
+        <div class="glass-card p-6 text-center card-hover"><i data-lucide="theater" class="w-12 h-12 text-yellow-400 mx-auto mb-3"></i><h3 class="font-bold">Danza</h3></div>
+    </div>
+</section>
+
+<!-- EVENTOS -->
+<section id="eventos" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="section-title title-glow" data-aos="fade-up">🔥 Eventos</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-church text-4xl text-yellow-400 mb-3"></i><h3 class="font-bold">Culto Adoradores</h3><p class="text-yellow-400">24 Enero 2026</p></div>
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-flag-checkered text-4xl text-yellow-400 mb-3"></i><h3 class="font-bold">Marcha Victoria</h3><p class="text-yellow-400">30 Mayo 2026</p></div>
+        <div class="glass-card p-6 text-center card-hover"><i class="fas fa-mountain text-4xl text-yellow-400 mb-3"></i><h3 class="font-bold">Retiro Espiritual</h3><p class="text-yellow-400">20-22 Junio 2026</p></div>
+    </div>
+</section>
+
+<!-- PETICIÓN ORACIÓN -->
+<section id="oracion" class="py-20 px-6 max-w-4xl mx-auto bg-black/20 rounded-3xl">
+    <h2 class="section-title title-glow" data-aos="fade-up">📩 Petición de Oración</h2>
+    <div class="glass-card p-8 rounded-2xl">
+        <form id="prayerForm" class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4"><input type="text" placeholder="Tu nombre" class="form-input" required><input type="email" placeholder="Tu email" class="form-input"></div>
+            <textarea rows="4" placeholder="Escribe tu petición..." class="form-input" required></textarea>
+            <button type="submit" class="btn-gold w-full"><i class="fas fa-praying-hands mr-2"></i> Enviar Petición</button>
+        </form>
+        <div id="prayerSuccess" class="mt-4 p-3 bg-green-900/50 border border-green-500 rounded-xl hidden text-green-300 text-center">✅ Tu petición ha sido enviada. Estamos orando por ti.</div>
+    </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="section-title title-glow" data-aos="fade-up">📍 Ubicación</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass-card p-8"><h3 class="text-2xl font-bold mb-4">Visítanos</h3><p><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> Calle Ana de Peravia #15, Baní</p><p><i class="fas fa-phone text-yellow-400 mr-2"></i> (809) 555-1234</p><p class="mt-4 p-3 bg-yellow-400/10 rounded"><strong>🚩 Punto de Marcha:</strong> Play de Peravia Escondido (C/27 Febrero frente UFHC)</p></div>
+        <div class="rounded-2xl overflow-hidden"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.715061273183!2d-69.9377229240574!3d18.45102366957923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89f1107ea5ab%3A0xd6c587b82715c164!2sPeravia%2C%20Rep%C3%BAblica%20Dominicana!5e0!3m2!1ses!2s!4v1706136836155!5m2!1ses!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+    </div>
+</section>
+
+<!-- QR -->
+<section class="text-center py-16">
+    <h2 class="text-3xl font-bold mb-4 title-glow">📲 Comparte Nuestra Página</h2>
+    <p class="text-gray-300 mb-6">Escanéa este código QR para acceder rápidamente</p>
+    <div id="qrcode" class="flex justify-center mb-4"></div>
+    <p class="text-yellow-400 font-semibold">¡Te esperamos en la Gran Marcha!</p>
+</section>
+
+<footer class="text-center py-8 text-gray-400 glass mx-6 mb-6 rounded-2xl">
+    <p>© 2025 ICDNJ - Deshaciendo las Obras del Diablo en el Nombre de Jesús</p>
+    <p class="text-sm">"Porque donde están dos o tres congregados en mi nombre, allí estoy yo" - Mateo 18:20</p>
+    <p class="text-xs mt-2">Diseñado con ❤️ para la Gloria de Dios</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: false, mirror: true });
+lucide.createIcons();
+
+// Menú
+const menuBtn = document.getElementById('menuBtn');
+const sidebar = document.getElementById('sidebar');
+if(menuBtn && sidebar) {
+    menuBtn.onclick = (e) => { e.stopPropagation(); sidebar.classList.toggle('-translate-x-full'); };
+    document.addEventListener('click', (e) => { if(!sidebar.contains(e.target) && !menuBtn.contains(e.target)) sidebar.classList.add('-translate-x-full'); });
+}
+
+// Back to top
+const backToTopBtn = document.getElementById('backToTop');
+if(backToTopBtn) {
+    window.addEventListener('scroll', () => { backToTopBtn.classList.toggle('hidden', window.scrollY <= 300); });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// QR
+const qrDiv = document.getElementById("qrcode");
+if(qrDiv && typeof QRCode !== 'undefined') {
+    new QRCode(qrDiv, { text: window.location.href, width: 160, height: 160, colorDark: "#f5b042", colorLight: "transparent" });
+}
+
+// Contador oraciones
+let count = 1247;
+const prayerForm = document.getElementById('prayerForm');
+if(prayerForm) {
+    prayerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        count++;
+        const sidebarCount = document.getElementById('sidebarPrayerCount');
+        if(sidebarCount) sidebarCount.innerText = count.toLocaleString();
+        const successDiv = document.getElementById('prayerSuccess');
+        if(successDiv) {
+            successDiv.classList.remove('hidden');
+            setTimeout(() => successDiv.classList.add('hidden'), 4000);
+        }
+        e.target.reset();
+    });
+}
+
+// Scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+        if(sidebar) sidebar.classList.add('-translate-x-full');
+    });
+});
+
+// Versículo del día
+const verses = [
+    "Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos.",
+    "Todo lo puedo en Cristo que me fortalece.",
+    "El Señor es mi pastor, nada me faltará.",
+    "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios."
+];
+const dailyVerseSpan = document.getElementById('dailyVerse');
+if(dailyVerseSpan) dailyVerseSpan.innerText = `"${verses[Math.floor(Math.random() * verses.length)]}"`;
+</script>
+</body>
+</html>
